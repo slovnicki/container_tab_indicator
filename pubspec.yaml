@@ -1,6 +1,6 @@
 name: container_tab_indicator
-description: Build your own Container-like Tab indicator.
-version: 0.1.0
+description: Build your own Tab indicator using familiar Container-like properties.
+version: 0.1.1
 homepage: https://github.com/slovnicki/contained_tab_bar_view
 repository: https://github.com/slovnicki/contained_tab_bar_view
 
