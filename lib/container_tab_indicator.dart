@@ -9,6 +9,7 @@ class ContainerTabIndicator extends Decoration {
   final Color color;
   final double borderWidth;
   final Color borderColor;
+  final EdgeInsetsGeometry padding;
 
   const ContainerTabIndicator({
     this.width,
@@ -17,6 +18,7 @@ class ContainerTabIndicator extends Decoration {
     this.color: const Color(0xFF2196F3),
     this.borderWidth: 0.0,
     this.borderColor: const Color(0xFF2196F3),
+    this.padding: const EdgeInsets.all(0.0),
   });
 
   @override
@@ -30,20 +32,37 @@ class ContainerTabIndicator extends Decoration {
 
 class _ContainerTabPainter extends BoxPainter {
   final ContainerTabIndicator indicator;
+  EdgeInsets resolvedPadding;
 
   _ContainerTabPainter(
     void Function() onChanged, {
     this.indicator: const ContainerTabIndicator(),
-  }) : super(onChanged);
+  }) : super(onChanged) {
+    this.resolvedPadding = this.indicator.padding.resolve(TextDirection.rtl);
+  }
 
   @override
   void paint(Canvas canvas, Offset offset, ImageConfiguration configuration) {
     double width = this.indicator.width ?? configuration.size.width;
     double height = this.indicator.height ?? configuration.size.height;
 
+    if (this.indicator.padding.horizontal >
+        (configuration.size.width - width)) {
+      width -= this.indicator.padding.horizontal;
+    }
+    if (this.indicator.padding.vertical >
+        (configuration.size.height - height)) {
+      height -= this.indicator.padding.vertical;
+    }
+
+    Offset finalOffset = Offset(
+      offset.dx + this.resolvedPadding.left - this.resolvedPadding.right,
+      offset.dy + this.resolvedPadding.top - this.resolvedPadding.bottom,
+    );
+
     if (this.indicator.borderWidth > 0.0) {
       final RRect borderRRect = _buildRRect(
-        offset,
+        finalOffset,
         configuration,
         width - this.indicator.borderWidth,
         height - this.indicator.borderWidth,
@@ -59,7 +78,7 @@ class _ContainerTabPainter extends BoxPainter {
     }
 
     final RRect indicatorRRect = _buildRRect(
-      offset,
+      finalOffset,
       configuration,
       width,
       height,
@@ -79,7 +98,7 @@ class _ContainerTabPainter extends BoxPainter {
     return RRect.fromRectAndCorners(
       Rect.fromCenter(
         center: Offset(offset.dx + configuration.size.width / 2,
-            configuration.size.height / 2),
+            offset.dy + configuration.size.height / 2),
         width: width,
         height: height,
       ),
