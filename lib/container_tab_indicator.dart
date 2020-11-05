@@ -7,22 +7,22 @@ class ContainerTabIndicator extends Decoration {
   final double widthFraction;
   final double height;
   final double heightFraction;
-  final BorderRadius radius;
+  final EdgeInsetsGeometry padding;
   final Color color;
+  final BorderRadius radius;
   final double borderWidth;
   final Color borderColor;
-  final EdgeInsetsGeometry padding;
 
   const ContainerTabIndicator({
     this.width,
     this.widthFraction,
     this.height,
     this.heightFraction,
-    this.radius: BorderRadius.zero,
+    this.padding: const EdgeInsets.all(0.0),
     this.color: const Color(0xFF2196F3),
+    this.radius: BorderRadius.zero,
     this.borderWidth: 0.0,
     this.borderColor: const Color(0xFF2196F3),
-    this.padding: const EdgeInsets.all(0.0),
   });
 
   @override
