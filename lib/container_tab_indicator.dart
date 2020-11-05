@@ -45,17 +45,17 @@ class _ContainerTabPainter extends BoxPainter {
       final RRect borderRRect = _buildRRect(
         offset,
         configuration,
-        width,
-        height,
-        addOnWidth: this.indicator.borderWidth,
+        width - this.indicator.borderWidth,
+        height - this.indicator.borderWidth,
       );
       final Paint paint = Paint()
         ..color = this.indicator.borderColor
-        ..style = PaintingStyle.fill;
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = this.indicator.borderWidth;
       canvas.drawRRect(borderRRect, paint);
 
-      width -= this.indicator.borderWidth;
-      height -= this.indicator.borderWidth;
+      width -= 2 * this.indicator.borderWidth;
+      height -= 2 * this.indicator.borderWidth;
     }
 
     final RRect indicatorRRect = _buildRRect(
@@ -74,15 +74,14 @@ class _ContainerTabPainter extends BoxPainter {
     Offset offset,
     ImageConfiguration configuration,
     double width,
-    double height, {
-    double addOnWidth: 0.0,
-  }) {
+    double height,
+  ) {
     return RRect.fromRectAndCorners(
       Rect.fromCenter(
         center: Offset(offset.dx + configuration.size.width / 2,
             configuration.size.height / 2),
-        width: width + 2 * addOnWidth,
-        height: height + 2 * addOnWidth,
+        width: width,
+        height: height,
       ),
       topLeft: this.indicator.radius.topLeft,
       topRight: this.indicator.radius.topRight,
