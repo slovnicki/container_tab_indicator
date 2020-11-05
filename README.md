@@ -1,13 +1,16 @@
 # ContainerTabIndicator
 
-Add customized `ContainerTabIndicator` as an `indicator` for your `TabBar`. You can manipulate width, height, color, border radius at each corner, border color and border width.
+Add customized `ContainerTabIndicator` as an `indicator` for your `TabBar`. You can manipulate width, height, color, radius, border and positioning within `Tab`.
 
 ```dart
 class ContainerTabIndicator extends Decoration {
   final double width;
+  final double widthFraction;
   final double height;
-  final BorderRadius radius;
+  final double heightFraction;
+  final EdgeInsetsGeometry padding;
   final Color color;
+  final BorderRadius radius;
   final double borderWidth;
   final Color borderColor;
   ...
@@ -25,7 +28,7 @@ dependencies:
   flutter:
     sdk: flutter
   ...  
-  container_tab_indicator: ^0.1.0
+  container_tab_indicator: ^0.2.0
 ```
 
 - get the package
@@ -53,14 +56,11 @@ TabBar(
     Text('Second', style: TextStyle(color: Colors.black)),
   ],
   indicator: ContainerTabIndicator(
-    width: 96,
-    height: 32,
-    color: Colors.blue,
-    radius: BorderRadius.only(
-      topLeft: Radius.circular(8.0),
-      bottomRight: Radius.circular(8.0),
-    ),
-    borderWidth: 1.0,
+    width: 16,
+    height: 16,
+    radius: BorderRadius.circular(8.0),
+    padding: const EdgeInsets.only(left: 36),
+    borderWidth: 2.0,
     borderColor: Colors.black,
   ),
 ),
