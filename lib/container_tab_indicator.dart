@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 
 class ContainerTabIndicator extends Decoration {
   final double width;
+  final double widthFraction;
   final double height;
+  final double heightFraction;
   final BorderRadius radius;
   final Color color;
   final double borderWidth;
@@ -13,7 +15,9 @@ class ContainerTabIndicator extends Decoration {
 
   const ContainerTabIndicator({
     this.width,
+    this.widthFraction,
     this.height,
+    this.heightFraction,
     this.radius: BorderRadius.zero,
     this.color: const Color(0xFF2196F3),
     this.borderWidth: 0.0,
@@ -43,8 +47,21 @@ class _ContainerTabPainter extends BoxPainter {
 
   @override
   void paint(Canvas canvas, Offset offset, ImageConfiguration configuration) {
-    double width = this.indicator.width ?? configuration.size.width;
-    double height = this.indicator.height ?? configuration.size.height;
+    double width;
+    double height;
+
+    if (this.indicator.widthFraction != null) {
+      width = (this.indicator.widthFraction * configuration.size.width)
+          .clamp(0, configuration.size.width);
+    } else {
+      width = this.indicator.width ?? configuration.size.width;
+    }
+    if (this.indicator.heightFraction != null) {
+      height = (this.indicator.heightFraction * configuration.size.height)
+          .clamp(0, configuration.size.height);
+    } else {
+      height = this.indicator.height ?? configuration.size.height;
+    }
 
     if (this.indicator.padding.horizontal >
         (configuration.size.width - width)) {
