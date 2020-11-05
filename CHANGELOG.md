@@ -1,3 +1,8 @@
+# 0.1.2
+
+- fix GitHub links
+- add Contributing to README
+
 # 0.1.1
 
 - add more words to description
