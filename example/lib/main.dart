@@ -36,6 +36,20 @@ class App extends StatelessWidget {
                     Text('Second', style: TextStyle(color: Colors.black)),
                   ],
                   indicator: ContainerTabIndicator(
+                    widthFraction: 0.6,
+                    height: 4,
+                    padding: const EdgeInsets.only(top: 26),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 56,
+                child: TabBar(
+                  tabs: [
+                    Text('First', style: TextStyle(color: Colors.black)),
+                    Text('Second', style: TextStyle(color: Colors.black)),
+                  ],
+                  indicator: ContainerTabIndicator(
                     width: 64,
                     height: 32,
                   ),
@@ -51,7 +65,7 @@ class App extends StatelessWidget {
                   indicator: ContainerTabIndicator(
                     width: 64,
                     height: 32,
-                    borderWidth: 1.0,
+                    borderWidth: 2.0,
                     borderColor: Colors.black,
                   ),
                 ),
@@ -64,9 +78,8 @@ class App extends StatelessWidget {
                     Text('Second', style: TextStyle(color: Colors.black)),
                   ],
                   indicator: ContainerTabIndicator(
-                    width: 96,
-                    height: 32,
                     radius: BorderRadius.all(Radius.circular(16.0)),
+                    padding: const EdgeInsets.all(8.0),
                   ),
                 ),
               ),
@@ -81,7 +94,7 @@ class App extends StatelessWidget {
                     width: 96,
                     height: 32,
                     radius: BorderRadius.all(Radius.circular(16.0)),
-                    borderWidth: 1.0,
+                    borderWidth: 2.0,
                     borderColor: Colors.black,
                   ),
                 ),
@@ -117,7 +130,24 @@ class App extends StatelessWidget {
                       topLeft: Radius.circular(8.0),
                       bottomRight: Radius.circular(8.0),
                     ),
-                    borderWidth: 1.0,
+                    borderWidth: 2.0,
+                    borderColor: Colors.black,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 56,
+                child: TabBar(
+                  tabs: [
+                    Text('First', style: TextStyle(color: Colors.black)),
+                    Text('Second', style: TextStyle(color: Colors.black)),
+                  ],
+                  indicator: ContainerTabIndicator(
+                    width: 16,
+                    height: 16,
+                    radius: BorderRadius.circular(8.0),
+                    padding: const EdgeInsets.only(left: 36),
+                    borderWidth: 2.0,
                     borderColor: Colors.black,
                   ),
                 ),
