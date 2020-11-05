@@ -69,3 +69,7 @@ TabBar(
 <p align="center">
 <img src="https://raw.githubusercontent.com/slovnicki/container_tab_indicator/master/doc/assets/1.gif" alt="example 1" width="360">
 </p>
+
+## Contributing
+
+This package is still in early stages. To see the upcoming features, check the [Issue board](https://github.com/slovnicki/container_tab_indicator/issues). If you notice any bugs not present in issues, please file a new issue. If you are willing to fix or enhance things yourself, you are very welcome to make a pull request.
