@@ -1,5 +1,7 @@
 # ContainerTabIndicator
 
+[![pub package](https://img.shields.io/pub/v/container_tab_indicator.svg)](https://pub.dev/packages/container_tab_indicator)
+
 Add customized `ContainerTabIndicator` as an `indicator` for your `TabBar`. You can manipulate width, height, color, radius, border and positioning within `Tab`.
 
 ```dart
