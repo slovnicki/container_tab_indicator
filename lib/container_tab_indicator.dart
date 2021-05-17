@@ -19,7 +19,7 @@ class ContainerTabIndicator extends Decoration {
 
   /// The width of the tab indicator.
   ///
-  /// If not provided, it uses the all the available width.
+  /// If not provided, it uses all the available width.
   final double? width;
 
   /// Multiplies the available width,
@@ -30,7 +30,7 @@ class ContainerTabIndicator extends Decoration {
 
   /// The height of the tab indicator.
   ///
-  /// If not provided, it uses the all the available height.
+  /// If not provided, it uses all the available height.
   final double? height;
 
   /// Multiplies the available height,
