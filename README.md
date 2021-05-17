@@ -19,33 +19,9 @@ class ContainerTabIndicator extends Decoration {
 }
 ```
 
-## Install
-
-To use this package
-
-- add `container_tab_indicator` as a [dependency in your pubspec.yaml file](https://flutter.dev/docs/development/packages-and-plugins/using-packages):.
-
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  ...  
-  container_tab_indicator: ^0.2.0
-```
-
-- get the package
-```bash
-flutter pub get
-```
-
-- import the package
-```dart
-import 'package:container_tab_indicator/container_tab_indicator.dart';
-```
-
 ## Example
 
-Full example code can be found at `example`.
+The full example code can be found [here](https://github.com/slovnicki/container_tab_indicator/tree/master/example).
 
 ```dart
 import 'package:container_tab_indicator/container_tab_indicator.dart';
@@ -69,7 +45,7 @@ TabBar(
 ```
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/slovnicki/container_tab_indicator/master/doc/assets/1.gif" alt="example 1" width="360">
+<img src="https://raw.githubusercontent.com/slovnicki/container_tab_indicator/master/doc/assets/example.gif" alt="example" width="360">
 </p>
 
 ## Contributing
