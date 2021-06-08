@@ -1,3 +1,8 @@
+# 0.3.0
+
+- migrate to null safety
+- add doc comments
+
 # 0.2.0
 
 - add `widthFraction` and `heightFraction` options
